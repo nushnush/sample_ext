@@ -96,12 +96,12 @@ size_t PASCAL OnNewSendto(int socket, const void* message, size_t length, int fl
 
 			union {
 				long b;
-				unsigned char byte[4];
+				unsigned char cell[4];
 			} thingB;
 
 			union {
 				float c;
-				unsigned char byte[4];
+				unsigned char cell[4];
 			} thingC;
 
 			int iCurrPos = 6;
@@ -124,23 +124,23 @@ size_t PASCAL OnNewSendto(int socket, const void* message, size_t length, int fl
 				iCurrPos++;
 
 				thingB.b = (*it).score;
-				pszMessage[iCurrPos] = thingB.byte[0];
+				pszMessage[iCurrPos] = thingB.cell[0];
 				iCurrPos++;
-				pszMessage[iCurrPos] = thingB.byte[1];
+				pszMessage[iCurrPos] = thingB.cell[1];
 				iCurrPos++;
-				pszMessage[iCurrPos] = thingB.byte[2];
+				pszMessage[iCurrPos] = thingB.cell[2];
 				iCurrPos++;
-				pszMessage[iCurrPos] = thingB.byte[3];
+				pszMessage[iCurrPos] = thingB.cell[3];
 				iCurrPos++;
 
 				thingC.c = (*it).time;
-				pszMessage[iCurrPos] = thingC.byte[0];
+				pszMessage[iCurrPos] = thingC.cell[0];
 				iCurrPos++;
-				pszMessage[iCurrPos] = thingC.byte[1];
+				pszMessage[iCurrPos] = thingC.cell[1];
 				iCurrPos++;
-				pszMessage[iCurrPos] = thingC.byte[2];
+				pszMessage[iCurrPos] = thingC.cell[2];
 				iCurrPos++;
-				pszMessage[iCurrPos] = thingC.byte[3];
+				pszMessage[iCurrPos] = thingC.cell[3];
 				iCurrPos++;
             }
 
