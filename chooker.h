@@ -385,7 +385,7 @@ static int dl_callback(struct dl_phdr_info* info, size_t size, void* data)
 {
 	CMemory* obj = (CMemory*)data;
 
-	if ((!obj->library) || strstr(info->dlpi_name, obj->library) > 0)
+	if ((!obj->library) || strstr(info->dlpi_name, (char*)obj->library) > 0)
 	{
 		int i;
 		BOOL ismain = FALSE;
